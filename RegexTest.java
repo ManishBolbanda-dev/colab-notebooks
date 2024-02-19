@@ -35,7 +35,7 @@ public class RegexTest {
 		System.out.println();
 		
 		
-		String regex = "^[A-Za-z0-9 	!#$%&\'\\[\\]()*+,-./:;<=>?@^_`{|}~ \\\\]*"; 
+		String regex = "^[A-Za-z0-9 	!#$%&\"'\\[\\]()*+,-./:;<=>?@^_`{|}~ \\\\]*"; 
 		
 //		String regex1 =  "^[A-Za-z0-9 	!#$%&\'\\[\\]()*+,-./:;<=>?@^_`{|}~ ]*"; 
 //						"^[A-Za-z0-9 	!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~ ]*$"
@@ -94,7 +94,7 @@ public class RegexTest {
 	private static void validateString() {
 		// TODO Auto-generated method stub
 		System.out.println("-----start-------");
-		String regex = "^[A-Za-z0-9 	!#$%&'\\[\\]()*+,-./:;<=>?@^_`{|}~ \\\\]*$";
+		String regex = "^[A-Za-z0-9 	!#$%&\"'\\[\\]()*+,-./:;<=>?@^_`{|}~ \\\\]*$";
 		List<String> tests = new ArrayList<>();
 		tests.add("normal string");
 		tests.add("989 num and string");
@@ -102,6 +102,7 @@ public class RegexTest {
 		tests.add("test with numbers 7462 874293");
 		tests.add("8834 98 0test with numbers 7462 874293");
 		tests.add("&^&*^897 % !2~ ` $ # ,.<>/ ' [] {} check special chars @!%^&*()_+-= 7462 874293");
+		tests.add("test double quotes \" &^&*^897 % !2~ ` $ # ,.<>/ ");
 
 		Pattern pattern = Pattern.compile(regex) ;
 		for(String test : tests) {
@@ -114,7 +115,7 @@ public class RegexTest {
 		
 	}
 	// regex break down for String regex = "^[A-Za-z0-9 	!#$%&\'\\[\\]()*+,-./:;<=>?@^_`{|}~ \\\\]*$"; 
-	//**
+	/**
 		
 		^: Asserts the start of the line.
 		
@@ -135,7 +136,7 @@ public class RegexTest {
 		This pattern seems to be intended for validating strings that consist of alphanumeric characters, spaces, and a specified set of special characters. The use of backslashes (\\) in the character class allows the inclusion of a literal backslash in the valid string.
 	
 
-	**//
+	**/
 	
 	
 
