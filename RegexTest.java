@@ -122,6 +122,8 @@ public class RegexTest {
 		[A-Za-z0-9 !#$%&'\\[\\]()*+,-./:;<=>?@^_{|}~ \\]*`:
 		
 		[A-Za-z0-9 ]: Character class that allows uppercase and lowercase letters, numerals (0-9), and space.
+  		\\[ represents the literal character "[".
+		\\] represents the literal character "]".
 		!#$%&'\\[\\]()*+,-./:;<=>?@^_{|}~`: Additional allowed special characters (escaped for literal representation in the pattern).
 		\\\\: Allows a literal backslash (\\).
 		*: Zero or more occurrences of the characters within the character class.
