@@ -91,7 +91,29 @@ public class RegexTest {
 		
 	}
 	
+	// regex break down for String regex = "^[A-Za-z0-9 	!#$%&\'\\[\\]()*+,-./:;<=>?@^_`{|}~ \\\\]*$"; 
+	//**
+		
+		^: Asserts the start of the line.
+		
+		[A-Za-z0-9 !#$%&'\\[\\]()*+,-./:;<=>?@^_{|}~ \\]*`:
+		
+		[A-Za-z0-9 ]: Character class that allows uppercase and lowercase letters, numerals (0-9), and space.
+		!#$%&'\\[\\]()*+,-./:;<=>?@^_{|}~`: Additional allowed special characters (escaped for literal representation in the pattern).
+		\\\\: Allows a literal backslash (\\).
+		*: Zero or more occurrences of the characters within the character class.
+		$: Asserts the end of the line.
+		
+		So, the regex pattern is designed to match strings that:
+		
+		Start with the beginning of the line.
+		Include uppercase and lowercase letters, numerals, space, and a specific set of special characters.
+		Allow for zero or more occurrences of these characters.
+		End with the end of the line.
+		This pattern seems to be intended for validating strings that consist of alphanumeric characters, spaces, and a specified set of special characters. The use of backslashes (\\) in the character class allows the inclusion of a literal backslash in the valid string.
 	
+
+	**//
 	
 	
 
