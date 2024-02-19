@@ -90,7 +90,29 @@ public class RegexTest {
 		System.out.println("out IMpl 2");
 		
 	}
-	
+
+	private static void validateString() {
+		// TODO Auto-generated method stub
+		System.out.println("-----start-------");
+		String regex = "^[A-Za-z0-9 	!#$%&'\\[\\]()*+,-./:;<=>?@^_`{|}~ \\\\]*$";
+		List<String> tests = new ArrayList<>();
+		tests.add("normal string");
+		tests.add("989 num and string");
+		tests.add("normal string");
+		tests.add("test with numbers 7462 874293");
+		tests.add("8834 98 0test with numbers 7462 874293");
+		tests.add("&^&*^897 % !2~ ` $ # ,.<>/ ' [] {} check special chars @!%^&*()_+-= 7462 874293");
+
+		Pattern pattern = Pattern.compile(regex) ;
+		for(String test : tests) {
+//			test += "£";
+			boolean ans = pattern.matcher(test).matches();
+			System.out.println("checking: "+test+"; ans -  "+ans);
+		}
+		System.out.println("-----end-------");
+//		return pattern.matcher(input).matches();
+		
+	}
 	// regex break down for String regex = "^[A-Za-z0-9 	!#$%&\'\\[\\]()*+,-./:;<=>?@^_`{|}~ \\\\]*$"; 
 	//**
 		
